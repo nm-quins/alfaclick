@@ -2,7 +2,7 @@
     block: 'page',
     title: 'Альфа-Клик',
     head: [{ elem: 'meta', attrs: { name: 'description', content: '' }}],
-    styles: [{ elem: 'css', url: '_index.css', ie: false }],
+    styles: [{ elem: 'css', url: 'assets/application.min.css', ie: false }],
     content:[
 		{
 			block: 'l-outer',
@@ -785,14 +785,14 @@
 							elem: 'section',
 							tag: 'section',
 							content: {
-								
+
 								block: 'b-rewards-previews',
 								content: [
 									{
 										block: 'b-rewards-article',
 										tag: 'article',
 										content: {
-											
+
 											elem: 'link',
 											tag: 'a',
 											attrs: { href: '#' },
@@ -801,10 +801,10 @@
 													elem: 'picture',
 													tag: 'span',
 													content: {
-													
+
 														elem: 'picture__entity',
 														tag: 'img',
-														attrs: { src: 'images/test/S5KQ5PsZuc.png' }
+														attrs: { src: 'assets/images/test/S5KQ5PsZuc.png' }
 													}
 												},
 												{
@@ -819,7 +819,7 @@
 										block: 'b-rewards-article',
 										tag: 'article',
 										content: {
-											
+
 											elem: 'link',
 											tag: 'a',
 											attrs: { href: '#' },
@@ -828,10 +828,10 @@
 													elem: 'picture',
 													tag: 'span',
 													content: {
-													
+
 														elem: 'picture__entity',
 														tag: 'img',
-														attrs: { src: 'images/test/Npk4hvHzyH.png' }
+														attrs: { src: 'assets/images/test/Npk4hvHzyH.png' }
 													}
 												},
 												{
@@ -846,7 +846,7 @@
 										block: 'b-rewards-article',
 										tag: 'article',
 										content: {
-											
+
 											elem: 'link',
 											tag: 'a',
 											attrs: { href: '#' },
@@ -855,10 +855,10 @@
 													elem: 'picture',
 													tag: 'span',
 													content: {
-													
+
 														elem: 'picture__entity',
 														tag: 'img',
-														attrs: { src: 'images/test/PeDNz1VP9H.png' }
+														attrs: { src: 'assets/images/test/PeDNz1VP9H.png' }
 													}
 												},
 												{
