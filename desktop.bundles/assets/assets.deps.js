@@ -25,10 +25,44 @@ exports.deps = [
         "block": "events"
     },
     {
-        "block": "reset"
+        "block": "page"
     },
     {
-        "block": "page"
+        "block": "i-bem",
+        "elem": "dom"
+    },
+    {
+        "block": "jquery"
+    },
+    {
+        "block": "loader"
+    },
+    {
+        "block": "loader",
+        "mod": "type"
+    },
+    {
+        "block": "loader",
+        "mod": "type",
+        "val": "js"
+    },
+    {
+        "block": "jquery",
+        "elem": "config"
+    },
+    {
+        "block": "dom"
+    },
+    {
+        "block": "i-bem",
+        "elem": "dom",
+        "mod": "init"
+    },
+    {
+        "block": "i-bem",
+        "elem": "dom",
+        "mod": "init",
+        "val": "auto"
     },
     {
         "block": "ua"
@@ -40,9 +74,6 @@ exports.deps = [
     {
         "block": "page",
         "elem": "js"
-    },
-    {
-        "block": "print"
     },
     {
         "block": "page",
