@@ -574,6 +574,7 @@ th {
 .l-content__section:first-child {
  padding-top: 0;
  border-bottom: 0;
+ display: none;
 }
 
 .l-content__section:last-child {
@@ -628,6 +629,93 @@ th {
   width: 500px;
   margin: 0;
  }
+ .b-registration-form__tab__contents {
+  padding: 30px 0 0 0;
+ }
+  .b-registration-form__tab__contents_position_first {
+   margin: 0 -35px;
+  }
+ .b-registration-form__tab__contents:after {
+  display: block;
+  content: ".";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+ }
+ .b-registration-form__section {
+  position: relative;
+  float: left;
+  width: 300px;
+  margin-left: 20px;
+ }
+  .b-registration-form__section:after {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 1px;
+   background: #dde5eb;
+   content: "";
+  }
+  .b-registration-form__section__title {
+   position: relative;
+   font-size: 14px;
+   font-weight: normal;
+   line-height: 20px;
+   margin: 0 0 25px 0;
+   color: #303030;
+   padding-left: 45px;
+  }
+   .b-registration-form__section__title:before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 28px;
+    border: 2px solid #303030;
+    border-radius: 15px;
+    content: "1";
+   }
+   .b-registration-form__section__title_position_second:before {
+    content: "2";
+   }
+   .b-registration-form__section__title_position_third:before {
+    content: "3";
+   }
+  .b-registration-form__section_position_first {
+   padding: 0 20px 0 15px;
+  }
+   .b-registration-form__section_position_first:after {
+    left: 100%;
+    margin-left: 10px;
+   }
+  .b-registration-form__section_position_second {
+   padding: 0 20px;
+  }
+   .b-registration-form__section_position_second:after {
+    left: 100%;
+    margin-left: 10px;
+   }
+   .b-registration-form__section_position_second:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    margin-right: 9px;
+    width: 1px;
+    background: #dde5eb;
+    content: "";
+   }
+  .b-registration-form__section_position_third {
+   padding-left: 20px;
+  }
+   .b-registration-form__section_position_third:after {
+    right: 100%;
+    margin-right: 9px;
+   }
  .b-registration-form .b-tabs {
   margin: 20px -30px 0 -30px;
  }
@@ -698,6 +786,75 @@ th {
   clear: both;
   overflow: hidden;
   visibility: hidden;
+ }
+
+/* ../../desktop.blocks/base/b-tabs/b-tabs.css end */
+/* ../../desktop.blocks/base/b-credit-card/b-credit-card.css begin */
+.b-credit-card {
+ position: relative;
+ background: #ef3224 url(https://click.alfabank.ru/ALFAIBSR/adf/c2/skins/images/menu/m-bg-blink.png) no-repeat 0 0;
+ border-radius: 10px;
+ height: 160px;
+ box-shadow: 0 1px 3px rgba(91, 6, 0, 0.3);
+ padding: 100px 15px 0 15px;
+}
+ .b-credit-card__logo {
+  position: absolute;
+  text-indent: -9999px;
+ }
+ .b-credit-card__label {
+  position: absolute;
+  top: 80px;
+  left: 25px;
+  font-size: 10px;
+  line-height: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 4;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+ }
+ .b-credit-card__shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 2;
+ }
+  .b-credit-card__shadow_position_top {
+   top: 0;
+   border-top: 2px solid #f28c79;
+  }
+  .b-credit-card__shadow_position_top {
+   bottom: 0;
+   border-bottom: 2px solid #cb2b1f;
+  }
+ .b-credit-card .b-text-field {
+  position: relative;
+  float: left;
+  width: 46px;
+  margin-left: 10px;
+  z-index: 4;
+ }
+
+/* ../../desktop.blocks/base/b-credit-card/b-credit-card.css end */
+/* ../../desktop.blocks/base/b-text-field/b-text-field.css begin */
+.b-text-field {
+ margin: 0;
+ padding: 0;
+ font-size: 14px;
+ height: 30px;
+ border: 0;
+ border-top: 1px solid #a9a9a9;
+ border-left: 1px solid #c7c7c7;
+ border-radius: 2px;
+ box-shadow: 0px 0px 2px rgba(142, 142, 142, 0.6) inset;
+}
+ .b-text-field_color_red {
+  border-top-color: #d1372c;
+  border-left-color: #da4e44;
+  box-shadow: 0px 0px 2px rgba(209, 55, 44, 0.6) inset;
  }
 
 .b-news-previews__title {
@@ -948,7 +1105,50 @@ th {
   visibility: hidden;
  }
 
-/* ../../desktop.blocks/base/b-promos-previews/b-promos-previews.css end */
+.b-rewards-previews .b-rewards-article {
+ float: left;
+ width: 300px;
+ margin-left: 20px;
+ padding: 0 40px;
+ text-align: center;
+}
+ .b-rewards-previews .b-rewards-article__link {
+  color: #08628c;
+  text-decoration: none;
+  border-bottom: 1px solid #b5d0dd;
+ }
+ .b-rewards-previews .b-rewards-article__link:hover {
+  border-bottom-color: #08628c;
+ }
+ .b-rewards-previews .b-rewards-article__picture {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  line-height: 150px;
+  overflow: hidden;
+  text-align: center;
+ }
+  .b-rewards-previews .b-rewards-article__picture__entity {
+   max-height: 150px;
+   vertical-align: middle;
+  }
+ .b-rewards-previews .b-rewards-article__title {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+ }
+
+.b-rewards-previews:after {
+ display: block;
+ content: ".";
+ height: 0;
+ clear: both;
+ overflow: hidden;
+ visibility: hidden;
+}
+
+/* ../../desktop.blocks/base/b-rewards-previews/b-rewards-previews.css end */
 /* ../../desktop.blocks/base/l-footer/l-footer.css begin */
 .l-footer {
  padding: 40px 0;

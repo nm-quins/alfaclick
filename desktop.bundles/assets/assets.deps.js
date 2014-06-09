@@ -114,6 +114,37 @@ exports.deps = [
         "elem": "description"
     },
     {
+        "block": "b-registration-form",
+        "elem": "tab__contents"
+    },
+    {
+        "block": "b-registration-form",
+        "elem": "section"
+    },
+    {
+        "block": "b-registration-form",
+        "elem": "section__title"
+    },
+    {
+        "block": "b-registration-form",
+        "mod": "position"
+    },
+    {
+        "block": "b-registration-form",
+        "mod": "position",
+        "val": "first"
+    },
+    {
+        "block": "b-registration-form",
+        "mod": "position",
+        "val": "second"
+    },
+    {
+        "block": "b-registration-form",
+        "mod": "position",
+        "val": "third"
+    },
+    {
         "block": "b-tabs"
     },
     {
@@ -128,6 +159,47 @@ exports.deps = [
         "block": "b-tabs",
         "mod": "state",
         "val": "current"
+    },
+    {
+        "block": "b-credit-card"
+    },
+    {
+        "block": "b-credit-card",
+        "elem": "logo"
+    },
+    {
+        "block": "b-credit-card",
+        "elem": "label"
+    },
+    {
+        "block": "b-credit-card",
+        "elem": "shadow"
+    },
+    {
+        "block": "b-credit-card",
+        "mod": "position"
+    },
+    {
+        "block": "b-credit-card",
+        "mod": "position",
+        "val": "top"
+    },
+    {
+        "block": "b-credit-card",
+        "mod": "position",
+        "val": "bottom"
+    },
+    {
+        "block": "b-text-field"
+    },
+    {
+        "block": "b-text-field",
+        "mod": "color"
+    },
+    {
+        "block": "b-text-field",
+        "mod": "color",
+        "val": "red"
     },
     {
         "block": "b-news-previews"
@@ -268,6 +340,28 @@ exports.deps = [
         "block": "b-promos-article",
         "mod": "position",
         "val": "back"
+    },
+    {
+        "block": "b-rewards-previews"
+    },
+    {
+        "block": "b-rewards-article"
+    },
+    {
+        "block": "b-rewards-article",
+        "elem": "link"
+    },
+    {
+        "block": "b-rewards-article",
+        "elem": "picture"
+    },
+    {
+        "block": "b-rewards-article",
+        "elem": "picture__entity"
+    },
+    {
+        "block": "b-rewards-article",
+        "elem": "title"
     },
     {
         "block": "l-footer"
