@@ -109,7 +109,46 @@
 		                {
 							elem: 'section',
 		                    tag: 'section',
-							content: '1 section'
+							content: [
+								{
+									block: 'b-authorization-form',
+									tag: 'form',
+									content: [
+										{
+											elem: 'title',
+											tag: 'h2',
+											content: 'Вход в интернет-банк'
+										},
+										{
+											block: 'b-text-field',
+											tag: 'input',
+											attrs: { type: 'text', placeholder: 'Логин' },
+											mods: { color: 'red', name: 'login' }
+										},
+										{
+											block: 'b-text-field',
+											tag: 'input',
+											attrs: { type: 'password', placeholder: 'Пароль' },
+											mods: { color: 'red', name: 'password' }
+										},
+										{
+											block: 'b-button',
+											tag: 'input',
+											attrs: { type: 'button', value: 'Войти' },
+											mods: { color: 'white' }
+										},
+										{
+											elem: 'recovering',
+											content: {
+												elem: 'recovering__link',
+												tag: 'a',
+												attrs: { href: '#' },
+												content: 'Забыли логин или пароль?'
+											}
+										}
+									]
+								}
+							]
 		                },
 		                {
 							elem: 'section',

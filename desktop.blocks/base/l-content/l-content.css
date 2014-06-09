@@ -8,9 +8,8 @@
 	
 	&__section:first-child {
 		
-		padding-top:0;
+		padding: 0;
 		border-bottom:0;
-		display:none;
 	}
 	
 	&__section:last-child {

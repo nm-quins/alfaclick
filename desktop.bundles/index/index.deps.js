@@ -103,6 +103,59 @@ exports.deps = [
         "elem": "section"
     },
     {
+        "block": "b-authorization-form"
+    },
+    {
+        "block": "b-authorization-form",
+        "elem": "title"
+    },
+    {
+        "block": "b-authorization-form",
+        "elem": "recovering"
+    },
+    {
+        "block": "b-authorization-form",
+        "elem": "recovering__link"
+    },
+    {
+        "block": "b-text-field"
+    },
+    {
+        "block": "b-text-field",
+        "mod": "color"
+    },
+    {
+        "block": "b-text-field",
+        "mod": "color",
+        "val": "red"
+    },
+    {
+        "block": "b-text-field",
+        "mod": "name"
+    },
+    {
+        "block": "b-text-field",
+        "mod": "name",
+        "val": "login"
+    },
+    {
+        "block": "b-text-field",
+        "mod": "name",
+        "val": "password"
+    },
+    {
+        "block": "b-button"
+    },
+    {
+        "block": "b-button",
+        "mod": "color"
+    },
+    {
+        "block": "b-button",
+        "mod": "color",
+        "val": "white"
+    },
+    {
         "block": "b-registration-form"
     },
     {
@@ -188,18 +241,6 @@ exports.deps = [
         "block": "b-credit-card",
         "mod": "position",
         "val": "bottom"
-    },
-    {
-        "block": "b-text-field"
-    },
-    {
-        "block": "b-text-field",
-        "mod": "color"
-    },
-    {
-        "block": "b-text-field",
-        "mod": "color",
-        "val": "red"
     },
     {
         "block": "b-news-previews"

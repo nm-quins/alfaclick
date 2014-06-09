@@ -64,6 +64,49 @@ exports.blocks = [
         ]
     },
     {
+        "name": "b-authorization-form",
+        "elems": [
+            {
+                "name": "title"
+            },
+            {
+                "name": "recovering"
+            },
+            {
+                "name": "recovering__link"
+            }
+        ]
+    },
+    {
+        "name": "b-text-field",
+        "mods": [
+            {
+                "name": "color",
+                "vals": [
+                    "red"
+                ]
+            },
+            {
+                "name": "name",
+                "vals": [
+                    "login",
+                    "password"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "b-button",
+        "mods": [
+            {
+                "name": "color",
+                "vals": [
+                    "white"
+                ]
+            }
+        ]
+    },
+    {
         "name": "b-registration-form",
         "elems": [
             {
@@ -128,17 +171,6 @@ exports.blocks = [
                 "vals": [
                     "top",
                     "bottom"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "b-text-field",
-        "mods": [
-            {
-                "name": "color",
-                "vals": [
-                    "red"
                 ]
             }
         ]
