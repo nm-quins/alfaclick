@@ -148,17 +148,12 @@ exports.blocks = [
         "elems": [
             {
                 "name": "title"
-            }
-        ]
-    },
-    {
-        "name": "b-news-article",
-        "elems": [
-            {
-                "name": "date"
             },
             {
-                "name": "title"
+                "name": "article"
+            },
+            {
+                "name": "date"
             },
             {
                 "name": "link"
@@ -214,11 +209,11 @@ exports.blocks = [
         ]
     },
     {
-        "name": "b-promos-previews"
-    },
-    {
-        "name": "b-promos-article",
+        "name": "b-promos-previews",
         "elems": [
+            {
+                "name": "article"
+            },
             {
                 "name": "inside"
             },
@@ -255,11 +250,11 @@ exports.blocks = [
         ]
     },
     {
-        "name": "b-rewards-previews"
-    },
-    {
-        "name": "b-rewards-article",
+        "name": "b-rewards-previews",
         "elems": [
+            {
+                "name": "article"
+            },
             {
                 "name": "link"
             },

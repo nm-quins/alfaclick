@@ -209,18 +209,15 @@ exports.deps = [
         "elem": "title"
     },
     {
-        "block": "b-news-article"
+        "block": "b-news-previews",
+        "elem": "article"
     },
     {
-        "block": "b-news-article",
+        "block": "b-news-previews",
         "elem": "date"
     },
     {
-        "block": "b-news-article",
-        "elem": "title"
-    },
-    {
-        "block": "b-news-article",
+        "block": "b-news-previews",
         "elem": "link"
     },
     {
@@ -293,51 +290,52 @@ exports.deps = [
         "block": "b-promos-previews"
     },
     {
-        "block": "b-promos-article"
+        "block": "b-promos-previews",
+        "elem": "article"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "inside"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "link"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "section"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "picture"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "title"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "description__title"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "description"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "elem": "description__link"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "mod": "position"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "mod": "position",
         "val": "front"
     },
     {
-        "block": "b-promos-article",
+        "block": "b-promos-previews",
         "mod": "position",
         "val": "back"
     },
@@ -345,22 +343,23 @@ exports.deps = [
         "block": "b-rewards-previews"
     },
     {
-        "block": "b-rewards-article"
+        "block": "b-rewards-previews",
+        "elem": "article"
     },
     {
-        "block": "b-rewards-article",
+        "block": "b-rewards-previews",
         "elem": "link"
     },
     {
-        "block": "b-rewards-article",
+        "block": "b-rewards-previews",
         "elem": "picture"
     },
     {
-        "block": "b-rewards-article",
+        "block": "b-rewards-previews",
         "elem": "picture__entity"
     },
     {
-        "block": "b-rewards-article",
+        "block": "b-rewards-previews",
         "elem": "title"
     },
     {

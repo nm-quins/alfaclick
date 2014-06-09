@@ -268,7 +268,7 @@
 											content: 'Новости'
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -291,7 +291,7 @@
 											]
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -314,7 +314,7 @@
 											]
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -337,7 +337,7 @@
 											]
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -554,7 +554,7 @@
 									block: 'b-promos-previews',
 									content: [
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -611,7 +611,7 @@
 											]
 										},
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -668,7 +668,7 @@
 											]
 										},
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: {
 												elem: 'inside',
@@ -721,7 +721,7 @@
 											}
 										},
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -789,7 +789,7 @@
 								block: 'b-rewards-previews',
 								content: [
 									{
-										block: 'b-rewards-article',
+										elem: 'article',
 										tag: 'article',
 										content: {
 											
@@ -816,7 +816,7 @@
 										}
 									},
 									{
-										block: 'b-rewards-article',
+										elem: 'article',
 										tag: 'article',
 										content: {
 											
@@ -843,7 +843,7 @@
 										}
 									},
 									{
-										block: 'b-rewards-article',
+										elem: 'article',
 										tag: 'article',
 										content: {
 											
