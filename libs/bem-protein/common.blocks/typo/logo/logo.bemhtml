@@ -1,0 +1,10 @@
+block('logo')(
+    content()(function() {
+        return {
+            block: 'link',
+            url: '//bem.info',
+            target: '_blank',
+            content: false
+        }
+    })
+)

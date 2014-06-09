@@ -1,0 +1,7 @@
+{
+    "name": "alfaclick",
+    "dependencies": {
+        "bem-protein": "git://github.com/verybigman/bem-protein.git#0.0.7"
+    },
+    "devDependencies": {}
+}

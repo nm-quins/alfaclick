@@ -1,0 +1,37 @@
+block('link')(
+    tag()('a'),
+
+    attrs()(function() {
+        var ctx = this.ctx,
+            attrs = {
+                tabindex : ctx.tabIndex
+            },
+            url = ctx.url,
+            typeOfUrl = typeof url;
+
+        typeOfUrl !== 'undefined' && (attrs.href = typeOfUrl === 'string'?
+            url :
+            this.reapply(url)); // url could contain bemjson
+
+        // default value for tabindex in case of link \wo href, so link could be focusable
+        typeof attrs.href === 'undefined' &&
+            typeof attrs.tabindex === 'undefined' &&
+        (attrs.tabindex = 0);
+
+        ctx.title && (attrs.title = ctx.title);
+        ctx.target && (attrs.target = ctx.target);
+
+        return attrs;
+    }),
+
+    content()(function() {
+
+        var content = [];
+
+        this.ctx.content && content.push({elem: 'inner', tag: 'span', content: this.ctx.content});
+
+        this.ctx.icon && content.unshift({elem: 'icon', tag: 'span', content: this.ctx.icon});
+
+        return content;
+    })
+)
