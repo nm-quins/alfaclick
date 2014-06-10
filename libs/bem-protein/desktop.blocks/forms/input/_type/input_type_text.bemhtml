@@ -1,3 +1,0 @@
-block('input').mod('type', 'text').elem('control').attrs()(function() {
-    return this.extend(applyNext(), { type: 'text' })
-})

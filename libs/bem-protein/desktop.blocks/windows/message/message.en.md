@@ -1,1 +1,0 @@
-Simple message on page

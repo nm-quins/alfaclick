@@ -1,7 +1,8 @@
 {
-    "name": "alfaclick",
-    "dependencies": {
-        "bem-protein": "git://github.com/verybigman/bem-protein.git#0.0.7"
-    },
-    "devDependencies": {}
+  "name": "alfaclick",
+  "dependencies": {
+    "bem-grid": "~0.0.3",
+    "bem-core": "~2.2.3"
+  },
+  "devDependencies": {}
 }

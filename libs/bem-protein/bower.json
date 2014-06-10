@@ -1,7 +1,0 @@
-{
-  "name": "bem-protein",
-  "private": true,
-  "dependencies": {
-    "bem-core": "v2.1.0"
-  }
-}

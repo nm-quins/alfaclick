@@ -40,52 +40,22 @@ MAKE.decl('BundleNode', {
                 'common.blocks'
             ].map(function(level){ return path.join(dirs.libs, 'bem-core', level); })
 
-            // You can also install bem-components (use bower-npm-install)
-            // and uncomment next lines for using i-bem.js blocks
-            // .concat([ 'common.blocks', 'desktop.blocks', 'design' ])
-            // .map(function(level){ return path.join(dirs.libs, 'bem-components', level); })
-
-            // bem-protein levels
+            // bem-grid levels
             .concat(
                 [
-                    'common.blocks/libs',
-                    'common.design/libs',
-                    'common.blocks/utils',
-                    'common.design/utils',
-                    'common.blocks/base',
-                    'common.design/base',
-                    'common.blocks/typo',
-                    'common.design/typo',
-                    'common.blocks/grid',
-                    'common.blocks/buttons',
-                    'common.design/buttons',
-                    'desktop.blocks/forms',
-                    'desktop.design/forms',
-                    'desktop.blocks/navigation',
-                    'desktop.blocks/lists',
-                    'desktop.blocks/tables',
-                    'desktop.blocks/wrappers',
-                    'desktop.design/wrappers',
-                    'desktop.blocks/windows',
-                    'desktop.design/windows',
-                    'desktop.blocks/progress',
-                    'desktop.blocks/js'
-                ].map(function(level){ return path.join(dirs.libs, 'bem-protein', level); })
+                    'common.blocks'
+                ].map(function(level){ return path.join(dirs.libs, 'bem-grid', level); })
             )
 
             // project levels
             .concat(
                 [
-                    'common.blocks/libs',
-                    'common.blocks/base',
-                    'common.design/base',
-                    'desktop.blocks/base',
-                    'desktop.design/base'
+                    'common.blocks',
+                    'desktop.blocks',
+                    'design/common.blocks',
+                    'design/desktop.blocks'
                 ]
-            ),
-
-            'touch-pad': [],
-            'touch-phone': []
+            )
         };
     },
 
@@ -120,25 +90,13 @@ MAKE.decl('AutoprefixerNode', {
 
         case 'desktop':
             return [
-                'last 2 versions',
-                'ie 10',
-                'ff 24',
-                'opera 12.16'
+                "last 2 version",
+                "opera 12.16",
+                "ie 8",
+                "ie 9",
+                "android 4",
+                "ios 6"
             ];
-
-        case 'touch-pad':
-            return [
-                'android 4',
-                'ios 5'
-            ];
-
-        case 'touch-phone':
-            return [
-                'android 4',
-                'ios 6',
-                'ie 10'
-            ];
-
         }
 
         return this.__base();

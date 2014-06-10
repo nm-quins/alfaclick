@@ -3,9 +3,13 @@
 
 .bem/cache
 .bem/snapshots
+.enb/tmp
 
 libs
 node_modules
+
+coverage.json
+/coverage
 
 *.bundles/*/*
 !*.bundles/.bem/*
@@ -15,4 +19,5 @@ node_modules
 /*.examples
 /*.specs
 /*.tests
+/*.sets
 

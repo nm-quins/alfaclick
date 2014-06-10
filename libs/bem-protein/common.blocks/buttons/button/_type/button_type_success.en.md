@@ -1,1 +1,0 @@
-button for confirm actions

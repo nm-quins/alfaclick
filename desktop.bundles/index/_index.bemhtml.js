@@ -137,7 +137,7 @@ function applyc(__$ctx, __$ref) {
             var __$r = __$b32(__$ctx, __$ref);
             if (__$r !== __$ref) return __$r;
         }
-        if (__$ctx._.isSimple(__$ctx.ctx)) {
+        if (__$ctx.isSimple(__$ctx.ctx)) {
             var __$r = __$b33(__$ctx, __$ref);
             if (__$r !== __$ref) return __$r;
         }
@@ -145,7 +145,7 @@ function applyc(__$ctx, __$ref) {
             var __$r = __$b34(__$ctx, __$ref);
             if (__$r !== __$ref) return __$r;
         }
-        if (__$ctx._.isArray(__$ctx.ctx)) {
+        if (__$ctx.isArray(__$ctx.ctx)) {
             var __$r = __$b35(__$ctx, __$ref);
             if (__$r !== __$ref) return __$r;
         }
@@ -154,8 +154,8 @@ function applyc(__$ctx, __$ref) {
     }
 }
 
-[ function(exports) {
-    var BEM_ = {}, toString = Object.prototype.toString, isArray = Array.isArray || function(obj) {
+[ function(exports, context) {
+    var undef, BEM_ = {}, toString = Object.prototype.toString, slice = Array.prototype.slice, isArray = Array.isArray || function(obj) {
         return toString.call(obj) === "[object Array]";
     }, SHORT_TAGS = {
         area: 1,
@@ -203,17 +203,17 @@ function applyc(__$ctx, __$ref) {
                     if (typeOfModVal !== "string" && typeOfModVal !== "boolean") {
                         modVal = modName;
                         modName = elem;
-                        elem = undefined;
+                        elem = undef;
                     }
                 } else if (typeOfModName !== "undefined") {
-                    modName = undefined;
+                    modName = undef;
                 } else if (elem && typeof elem !== "string") {
-                    elem = undefined;
+                    elem = undef;
                 }
                 if (!(elem || modName)) {
                     return block;
                 }
-                if (elem) return buildElemClass(block, elem, modName, modVal); else return buildBlockClass(block, modName, modVal);
+                return elem ? buildElemClass(block, elem, modName, modVal) : buildBlockClass(block, modName, modVal);
             },
             buildModsClasses: function(block, elem, mods) {
                 var res = "";
@@ -231,7 +231,7 @@ function applyc(__$ctx, __$ref) {
             },
             buildClasses: function(block, elem, mods) {
                 var res = "";
-                if (elem) res += buildElemClass(block, elem); else res += buildBlockClass(block);
+                res += elem ? buildElemClass(block, elem) : buildBlockClass(block);
                 res += this.buildModsClasses(block, elem, mods);
                 return res;
             }
@@ -251,15 +251,16 @@ function applyc(__$ctx, __$ref) {
             return ("" + s).replace(r, f);
         };
     };
+    context.BEMContext = BEMContext;
     function BEMContext(context, apply_) {
-        this.ctx = typeof context === null ? "" : context;
+        this.ctx = typeof context === "undefined" ? "" : context;
         this.apply = apply_;
         this._str = "";
-        var self = this;
+        var _this = this;
         this._buf = {
             push: function() {
-                var chunks = Array.prototype.slice.call(arguments).join("");
-                self._str += chunks;
+                var chunks = slice.call(arguments).join("");
+                _this._str += chunks;
             },
             join: function() {
                 return this._str;
@@ -271,15 +272,16 @@ function applyc(__$ctx, __$ref) {
         this._listLength = 0;
         this._notNewList = false;
         this.position = 0;
-        this.block = undefined;
-        this.elem = undefined;
-        this.mods = undefined;
-        this.elemMods = undefined;
+        this.block = undef;
+        this.elem = undef;
+        this.mods = undef;
+        this.elemMods = undef;
     }
     BEMContext.prototype.isArray = isArray;
     BEMContext.prototype.isSimple = function isSimple(obj) {
+        if (!obj || obj === true) return true;
         var t = typeof obj;
-        return t === "string" || t === "number" || t === "boolean";
+        return t === "string" || t === "number";
     };
     BEMContext.prototype.isShortTag = function isShortTag(t) {
         return SHORT_TAGS.hasOwnProperty(t);
@@ -315,7 +317,7 @@ function applyc(__$ctx, __$ref) {
         return this.identify(this.ctx);
     };
     var oldApply = exports.apply;
-    exports.apply = BEMContext.apply = function _apply(context) {
+    exports.apply = BEMContext.apply = function BEMContext_apply(context) {
         var ctx = new BEMContext(context || this, oldApply);
         ctx.apply();
         return ctx._str;
@@ -394,92 +396,93 @@ function __$b28(__$ctx, __$ref) {
 }
 
 function __$b29(__$ctx, __$ref) {
-    var _this__$14 = __$ctx, BEM___$15 = _this__$14.BEM, v__$16 = __$ctx.ctx, isBEM__$17, tag__$18, result__$19;
+    var _this__$14 = __$ctx, BEM_INTERNAL__$15 = _this__$14.BEM.INTERNAL, ctx__$16 = __$ctx.ctx, isBEM__$17, tag__$18, res__$19;
     var __$r__$21;
     var __$l0__$22 = __$ctx._str;
     __$ctx._str = "";
-    var __$r__$24;
-    var __$l1__$25 = $$mode;
+    var vBlock__$23 = $$block;
+    var __$r__$25;
+    var __$l1__$26 = $$mode;
     $$mode = "tag";
-    __$r__$24 = applyc(__$ctx, __$ref);
-    $$mode = __$l1__$25;
-    tag__$18 = __$r__$24;
-    typeof tag__$18 !== "undefined" || (tag__$18 = v__$16.tag);
+    __$r__$25 = applyc(__$ctx, __$ref);
+    $$mode = __$l1__$26;
+    tag__$18 = __$r__$25;
+    typeof tag__$18 !== "undefined" || (tag__$18 = ctx__$16.tag);
     typeof tag__$18 !== "undefined" || (tag__$18 = "div");
     if (tag__$18) {
-        var jsParams__$26, js__$27;
-        if ($$block && v__$16.js !== false) {
-            var __$r__$28;
-            var __$l2__$29 = $$mode;
+        var jsParams__$27, js__$28;
+        if (vBlock__$23 && ctx__$16.js !== false) {
+            var __$r__$29;
+            var __$l2__$30 = $$mode;
             $$mode = "js";
-            __$r__$28 = applyc(__$ctx, __$ref);
-            $$mode = __$l2__$29;
-            js__$27 = __$r__$28;
-            js__$27 = js__$27 ? __$ctx._.extend(v__$16.js, js__$27 === true ? {} : js__$27) : v__$16.js === true ? {} : v__$16.js;
-            js__$27 && ((jsParams__$26 = {})[BEM___$15.INTERNAL.buildClass($$block, v__$16.elem)] = js__$27);
+            __$r__$29 = applyc(__$ctx, __$ref);
+            $$mode = __$l2__$30;
+            js__$28 = __$r__$29;
+            js__$28 = js__$28 ? __$ctx.extend(ctx__$16.js, js__$28 === true ? {} : js__$28) : ctx__$16.js === true ? {} : ctx__$16.js;
+            js__$28 && ((jsParams__$27 = {})[BEM_INTERNAL__$15.buildClass(vBlock__$23, ctx__$16.elem)] = js__$28);
         }
         __$ctx._str += "<" + tag__$18;
-        var __$r__$30;
-        var __$l3__$31 = $$mode;
+        var __$r__$31;
+        var __$l3__$32 = $$mode;
         $$mode = "bem";
-        __$r__$30 = applyc(__$ctx, __$ref);
-        $$mode = __$l3__$31;
-        isBEM__$17 = __$r__$30;
-        typeof isBEM__$17 !== "undefined" || (isBEM__$17 = typeof v__$16.bem !== "undefined" ? v__$16.bem : v__$16.block || v__$16.elem);
-        var __$r__$33;
-        var __$l4__$34 = $$mode;
+        __$r__$31 = applyc(__$ctx, __$ref);
+        $$mode = __$l3__$32;
+        isBEM__$17 = __$r__$31;
+        typeof isBEM__$17 !== "undefined" || (isBEM__$17 = typeof ctx__$16.bem !== "undefined" ? ctx__$16.bem : ctx__$16.block || ctx__$16.elem);
+        var __$r__$34;
+        var __$l4__$35 = $$mode;
         $$mode = "cls";
-        __$r__$33 = applyc(__$ctx, __$ref);
-        $$mode = __$l4__$34;
-        var cls__$32 = __$r__$33;
-        cls__$32 || (cls__$32 = v__$16.cls);
-        var addJSInitClass__$35 = v__$16.block && jsParams__$26;
-        if (isBEM__$17 || cls__$32) {
+        __$r__$34 = applyc(__$ctx, __$ref);
+        $$mode = __$l4__$35;
+        var cls__$33 = __$r__$34;
+        cls__$33 || (cls__$33 = ctx__$16.cls);
+        var addJSInitClass__$36 = ctx__$16.block && jsParams__$27;
+        if (isBEM__$17 || cls__$33) {
             __$ctx._str += ' class="';
             if (isBEM__$17) {
-                __$ctx._str += BEM___$15.INTERNAL.buildClasses($$block, v__$16.elem, v__$16.elemMods || v__$16.mods);
-                var __$r__$37;
-                var __$l5__$38 = $$mode;
+                __$ctx._str += BEM_INTERNAL__$15.buildClasses(vBlock__$23, ctx__$16.elem, ctx__$16.elemMods || ctx__$16.mods);
+                var __$r__$38;
+                var __$l5__$39 = $$mode;
                 $$mode = "mix";
-                __$r__$37 = applyc(__$ctx, __$ref);
-                $$mode = __$l5__$38;
-                var mix__$36 = __$r__$37;
-                v__$16.mix && (mix__$36 = mix__$36 ? mix__$36.concat(v__$16.mix) : v__$16.mix);
-                if (mix__$36) {
-                    var visited__$39 = {}, visitedKey__$40 = function(block, elem) {
+                __$r__$38 = applyc(__$ctx, __$ref);
+                $$mode = __$l5__$39;
+                var mix__$37 = __$r__$38;
+                ctx__$16.mix && (mix__$37 = mix__$37 ? mix__$37.concat(ctx__$16.mix) : ctx__$16.mix);
+                if (mix__$37) {
+                    var visited__$40 = {}, visitedKey__$41 = function(block, elem) {
                         return (block || "") + "__" + (elem || "");
                     };
-                    visited__$39[visitedKey__$40($$block, $$elem)] = true;
-                    if (!__$ctx._.isArray(mix__$36)) mix__$36 = [ mix__$36 ];
-                    for (var i__$41 = 0; i__$41 < mix__$36.length; i__$41++) {
-                        var mixItem__$42 = mix__$36[i__$41], hasItem__$43 = mixItem__$42.block || mixItem__$42.elem, block__$44 = mixItem__$42.block || mixItem__$42._block || _this__$14.block, elem__$45 = mixItem__$42.elem || mixItem__$42._elem || _this__$14.elem;
-                        if (hasItem__$43) __$ctx._str += " ";
-                        __$ctx._str += BEM___$15.INTERNAL[hasItem__$43 ? "buildClasses" : "buildModsClasses"](block__$44, mixItem__$42.elem || mixItem__$42._elem || (mixItem__$42.block ? undefined : _this__$14.elem), mixItem__$42.elemMods || mixItem__$42.mods);
-                        if (mixItem__$42.js) {
-                            (jsParams__$26 || (jsParams__$26 = {}))[BEM___$15.INTERNAL.buildClass(block__$44, mixItem__$42.elem)] = mixItem__$42.js === true ? {} : mixItem__$42.js;
-                            addJSInitClass__$35 || (addJSInitClass__$35 = block__$44 && !mixItem__$42.elem);
+                    visited__$40[visitedKey__$41(vBlock__$23, $$elem)] = true;
+                    __$ctx.isArray(mix__$37) || (mix__$37 = [ mix__$37 ]);
+                    for (var i__$42 = 0; i__$42 < mix__$37.length; i__$42++) {
+                        var mixItem__$43 = mix__$37[i__$42], hasItem__$44 = mixItem__$43.block || mixItem__$43.elem, mixBlock__$45 = mixItem__$43.block || mixItem__$43._block || _this__$14.block, mixElem__$46 = mixItem__$43.elem || mixItem__$43._elem || _this__$14.elem;
+                        hasItem__$44 && (__$ctx._str += " ");
+                        __$ctx._str += BEM_INTERNAL__$15[hasItem__$44 ? "buildClasses" : "buildModsClasses"](mixBlock__$45, mixItem__$43.elem || mixItem__$43._elem || (mixItem__$43.block ? undefined : _this__$14.elem), mixItem__$43.elemMods || mixItem__$43.mods);
+                        if (mixItem__$43.js) {
+                            (jsParams__$27 || (jsParams__$27 = {}))[BEM_INTERNAL__$15.buildClass(mixBlock__$45, mixItem__$43.elem)] = mixItem__$43.js === true ? {} : mixItem__$43.js;
+                            addJSInitClass__$36 || (addJSInitClass__$36 = mixBlock__$45 && !mixItem__$43.elem);
                         }
-                        if (hasItem__$43 && !visited__$39[visitedKey__$40(block__$44, elem__$45)]) {
-                            visited__$39[visitedKey__$40(block__$44, elem__$45)] = true;
-                            var __$r__$47;
-                            var __$l6__$48 = $$mode;
+                        if (hasItem__$44 && !visited__$40[visitedKey__$41(mixBlock__$45, mixElem__$46)]) {
+                            visited__$40[visitedKey__$41(mixBlock__$45, mixElem__$46)] = true;
+                            var __$r__$48;
+                            var __$l6__$49 = $$mode;
                             $$mode = "mix";
-                            var __$l7__$49 = $$block;
-                            $$block = block__$44;
-                            var __$l8__$50 = $$elem;
-                            $$elem = elem__$45;
-                            __$r__$47 = applyc(__$ctx, __$ref);
-                            $$mode = __$l6__$48;
-                            $$block = __$l7__$49;
-                            $$elem = __$l8__$50;
-                            var nestedMix__$46 = __$r__$47;
-                            if (nestedMix__$46) {
-                                for (var j__$51 = 0; j__$51 < nestedMix__$46.length; j__$51++) {
-                                    var nestedItem__$52 = nestedMix__$46[j__$51];
-                                    if (!nestedItem__$52.block && !nestedItem__$52.elem || !visited__$39[visitedKey__$40(nestedItem__$52.block, nestedItem__$52.elem)]) {
-                                        nestedItem__$52._block = block__$44;
-                                        nestedItem__$52._elem = elem__$45;
-                                        mix__$36.splice(i__$41 + 1, 0, nestedItem__$52);
+                            var __$l7__$50 = $$block;
+                            $$block = mixBlock__$45;
+                            var __$l8__$51 = $$elem;
+                            $$elem = mixElem__$46;
+                            __$r__$48 = applyc(__$ctx, __$ref);
+                            $$mode = __$l6__$49;
+                            $$block = __$l7__$50;
+                            $$elem = __$l8__$51;
+                            var nestedMix__$47 = __$r__$48;
+                            if (nestedMix__$47) {
+                                for (var j__$52 = 0; j__$52 < nestedMix__$47.length; j__$52++) {
+                                    var nestedItem__$53 = nestedMix__$47[j__$52];
+                                    if (!nestedItem__$53.block && !nestedItem__$53.elem || !visited__$40[visitedKey__$41(nestedItem__$53.block, nestedItem__$53.elem)]) {
+                                        nestedItem__$53._block = mixBlock__$45;
+                                        nestedItem__$53._elem = mixElem__$46;
+                                        mix__$37.splice(i__$42 + 1, 0, nestedItem__$53);
                                     }
                                 }
                             }
@@ -487,89 +490,89 @@ function __$b29(__$ctx, __$ref) {
                     }
                 }
             }
-            if (cls__$32) __$ctx._str += isBEM__$17 ? " " + cls__$32 : cls__$32;
-            if (addJSInitClass__$35) __$ctx._str += ' i-bem"'; else __$ctx._str += '"';
+            cls__$33 && (__$ctx._str += isBEM__$17 ? " " + cls__$33 : cls__$33);
+            __$ctx._str += addJSInitClass__$36 ? ' i-bem"' : '"';
         }
-        if (isBEM__$17 && jsParams__$26) {
-            __$ctx._str += ' data-bem="' + __$ctx._.attrEscape(JSON.stringify(jsParams__$26)) + '"';
+        if (isBEM__$17 && jsParams__$27) {
+            __$ctx._str += ' data-bem="' + __$ctx.attrEscape(JSON.stringify(jsParams__$27)) + '"';
         }
-        var __$r__$54;
-        var __$l9__$55 = $$mode;
+        var __$r__$55;
+        var __$l9__$56 = $$mode;
         $$mode = "attrs";
-        __$r__$54 = applyc(__$ctx, __$ref);
-        $$mode = __$l9__$55;
-        var attrs__$53 = __$r__$54;
-        attrs__$53 = __$ctx._.extend(attrs__$53, v__$16.attrs);
-        if (attrs__$53) {
-            var name__$56, attr__$57;
-            for (name__$56 in attrs__$53) {
-                attr__$57 = attrs__$53[name__$56];
-                if (attr__$57 === undefined) continue;
-                __$ctx._str += " " + name__$56 + '="' + __$ctx._.attrEscape(__$ctx._.isSimple(attr__$57) ? attr__$57 : __$ctx.reapply(attr__$57)) + '"';
+        __$r__$55 = applyc(__$ctx, __$ref);
+        $$mode = __$l9__$56;
+        var attrs__$54 = __$r__$55;
+        attrs__$54 = __$ctx.extend(attrs__$54, ctx__$16.attrs);
+        if (attrs__$54) {
+            var name__$57, attr__$58;
+            for (name__$57 in attrs__$54) {
+                attr__$58 = attrs__$54[name__$57];
+                if (typeof attr__$58 === "undefined") continue;
+                __$ctx._str += " " + name__$57 + '="' + __$ctx.attrEscape(__$ctx.isSimple(attr__$58) ? attr__$58 : __$ctx.reapply(attr__$58)) + '"';
             }
         }
     }
-    if (__$ctx._.isShortTag(tag__$18)) {
+    if (__$ctx.isShortTag(tag__$18)) {
         __$ctx._str += "/>";
     } else {
-        if (tag__$18) __$ctx._str += ">";
-        var __$r__$59;
-        var __$l10__$60 = $$mode;
+        tag__$18 && (__$ctx._str += ">");
+        var __$r__$60;
+        var __$l10__$61 = $$mode;
         $$mode = "content";
-        __$r__$59 = applyc(__$ctx, __$ref);
-        $$mode = __$l10__$60;
-        var content__$58 = __$r__$59;
-        if (content__$58 || content__$58 === 0) {
-            isBEM__$17 = $$block || $$elem;
-            var __$r__$61;
-            var __$l11__$62 = $$mode;
+        __$r__$60 = applyc(__$ctx, __$ref);
+        $$mode = __$l10__$61;
+        var content__$59 = __$r__$60;
+        if (content__$59 || content__$59 === 0) {
+            isBEM__$17 = vBlock__$23 || $$elem;
+            var __$r__$62;
+            var __$l11__$63 = $$mode;
             $$mode = "";
-            var __$l12__$63 = __$ctx._notNewList;
+            var __$l12__$64 = __$ctx._notNewList;
             __$ctx._notNewList = false;
-            var __$l13__$64 = __$ctx.position;
+            var __$l13__$65 = __$ctx.position;
             __$ctx.position = isBEM__$17 ? 1 : __$ctx.position;
-            var __$l14__$65 = __$ctx._listLength;
+            var __$l14__$66 = __$ctx._listLength;
             __$ctx._listLength = isBEM__$17 ? 1 : __$ctx._listLength;
-            var __$l15__$66 = __$ctx.ctx;
-            __$ctx.ctx = content__$58;
-            __$r__$61 = applyc(__$ctx, __$ref);
-            $$mode = __$l11__$62;
-            __$ctx._notNewList = __$l12__$63;
-            __$ctx.position = __$l13__$64;
-            __$ctx._listLength = __$l14__$65;
-            __$ctx.ctx = __$l15__$66;
+            var __$l15__$67 = __$ctx.ctx;
+            __$ctx.ctx = content__$59;
+            __$r__$62 = applyc(__$ctx, __$ref);
+            $$mode = __$l11__$63;
+            __$ctx._notNewList = __$l12__$64;
+            __$ctx.position = __$l13__$65;
+            __$ctx._listLength = __$l14__$66;
+            __$ctx.ctx = __$l15__$67;
         }
-        if (tag__$18) __$ctx._str += "</" + tag__$18 + ">";
+        tag__$18 && (__$ctx._str += "</" + tag__$18 + ">");
     }
-    result__$19 = __$ctx._str;
+    res__$19 = __$ctx._str;
     __$r__$21 = undefined;
     __$ctx._str = __$l0__$22;
-    __$ctx._buf.push(result__$19);
+    __$ctx._buf.push(res__$19);
     return;
 }
 
 function __$b32(__$ctx, __$ref) {
-    var __$r__$68;
-    var __$l0__$69 = $$mode;
+    var __$r__$69;
+    var __$l0__$70 = $$mode;
     $$mode = "";
-    var __$l1__$70 = __$ctx.ctx;
+    var __$l1__$71 = __$ctx.ctx;
     __$ctx.ctx = __$ctx.ctx._value;
-    var __$r__$72;
-    var __$l2__$73 = __$ctx.__$a0;
+    var __$r__$73;
+    var __$l2__$74 = __$ctx.__$a0;
     __$ctx.__$a0 = __$ctx.__$a0 | 8;
-    __$r__$72 = applyc(__$ctx, __$ref);
-    __$ctx.__$a0 = __$l2__$73;
-    __$r__$68 = __$r__$72;
-    $$mode = __$l0__$69;
-    __$ctx.ctx = __$l1__$70;
+    __$r__$73 = applyc(__$ctx, __$ref);
+    __$ctx.__$a0 = __$l2__$74;
+    __$r__$69 = __$r__$73;
+    $$mode = __$l0__$70;
+    __$ctx.ctx = __$l1__$71;
     return;
 }
 
 function __$b33(__$ctx, __$ref) {
     __$ctx._listLength--;
-    var ctx__$74 = __$ctx.ctx;
-    if (ctx__$74 && ctx__$74 !== true || ctx__$74 === 0) {
-        __$ctx._buf.push(ctx__$74 + "");
+    var ctx__$75 = __$ctx.ctx;
+    if (ctx__$75 && ctx__$75 !== true || ctx__$75 === 0) {
+        __$ctx._str += ctx__$75 + "";
     }
     return;
 }
@@ -580,51 +583,51 @@ function __$b34(__$ctx, __$ref) {
 }
 
 function __$b35(__$ctx, __$ref) {
-    var v__$75 = __$ctx.ctx, l__$76 = v__$75.length, i__$77 = 0, prevPos__$78 = __$ctx.position, prevNotNewList__$79 = __$ctx._notNewList;
-    if (prevNotNewList__$79) {
-        __$ctx._listLength += l__$76 - 1;
+    var ctx__$76 = __$ctx.ctx, len__$77 = ctx__$76.length, i__$78 = 0, prevPos__$79 = __$ctx.position, prevNotNewList__$80 = __$ctx._notNewList;
+    if (prevNotNewList__$80) {
+        __$ctx._listLength += len__$77 - 1;
     } else {
         __$ctx.position = 0;
-        __$ctx._listLength = l__$76;
+        __$ctx._listLength = len__$77;
     }
     __$ctx._notNewList = true;
-    while (i__$77 < l__$76) (function __$lb__$80() {
-        var __$r__$81;
-        var __$l0__$82 = __$ctx.ctx;
-        __$ctx.ctx = v__$75[i__$77++];
-        __$r__$81 = applyc(__$ctx, __$ref);
-        __$ctx.ctx = __$l0__$82;
-        return __$r__$81;
+    while (i__$78 < len__$77) (function __$lb__$81() {
+        var __$r__$82;
+        var __$l0__$83 = __$ctx.ctx;
+        __$ctx.ctx = ctx__$76[i__$78++];
+        __$r__$82 = applyc(__$ctx, __$ref);
+        __$ctx.ctx = __$l0__$83;
+        return __$r__$82;
     })();
-    prevNotNewList__$79 || (__$ctx.position = prevPos__$78);
+    prevNotNewList__$80 || (__$ctx.position = prevPos__$79);
     return;
 }
 
 function __$b36(__$ctx, __$ref) {
-    var vBlock__$83 = __$ctx.ctx.block, vElem__$84 = __$ctx.ctx.elem, block__$85 = __$ctx._currBlock || $$block;
     __$ctx.ctx || (__$ctx.ctx = {});
-    var __$r__$87;
-    var __$l0__$88 = $$mode;
+    var vBlock__$84 = __$ctx.ctx.block, vElem__$85 = __$ctx.ctx.elem, block__$86 = __$ctx._currBlock || $$block;
+    var __$r__$88;
+    var __$l0__$89 = $$mode;
     $$mode = "default";
-    var __$l1__$89 = $$block;
-    $$block = vBlock__$83 || (vElem__$84 ? block__$85 : undefined);
-    var __$l2__$90 = __$ctx._currBlock;
-    __$ctx._currBlock = vBlock__$83 || vElem__$84 ? undefined : block__$85;
-    var __$l3__$91 = $$elem;
-    $$elem = __$ctx.ctx.elem;
-    var __$l4__$92 = $$mods;
-    $$mods = vBlock__$83 ? __$ctx.ctx.mods || (__$ctx.ctx.mods = {}) : $$mods;
-    var __$l5__$93 = $$elemMods;
+    var __$l1__$90 = $$block;
+    $$block = vBlock__$84 || (vElem__$85 ? block__$86 : undefined);
+    var __$l2__$91 = __$ctx._currBlock;
+    __$ctx._currBlock = vBlock__$84 || vElem__$85 ? undefined : block__$86;
+    var __$l3__$92 = $$elem;
+    $$elem = vElem__$85;
+    var __$l4__$93 = $$mods;
+    $$mods = vBlock__$84 ? __$ctx.ctx.mods || (__$ctx.ctx.mods = {}) : $$mods;
+    var __$l5__$94 = $$elemMods;
     $$elemMods = __$ctx.ctx.elemMods || {};
     $$block || $$elem ? __$ctx.position = (__$ctx.position || 0) + 1 : __$ctx._listLength--;
     applyc(__$ctx, __$ref);
-    __$r__$87 = undefined;
-    $$mode = __$l0__$88;
-    $$block = __$l1__$89;
-    __$ctx._currBlock = __$l2__$90;
-    $$elem = __$l3__$91;
-    $$mods = __$l4__$92;
-    $$elemMods = __$l5__$93;
+    __$r__$88 = undefined;
+    $$mode = __$l0__$89;
+    $$block = __$l1__$90;
+    __$ctx._currBlock = __$l2__$91;
+    $$elem = __$l3__$92;
+    $$mods = __$l4__$93;
+    $$elemMods = __$l5__$94;
     return;
 };
      return exports;

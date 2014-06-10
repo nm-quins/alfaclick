@@ -21,8 +21,6 @@ MAKE.decl('Arch', {
     blocksLevelsRegexp : /^.+?\.blocks$/,
     bundlesLevelsRegexp : /^.+?\.bundles$/,
 
-    libraries : [],
-
     createCustomNodes : function(common, libs, blocks) {
         var SetsNode = MAKE.getNodeClass('SetsNode');
 
@@ -30,7 +28,7 @@ MAKE.decl('Arch', {
             return;
         }
 
-        return new SetsNode({ root : this.root, arch : this.arch }).alterArch(null, libs);
+        return new SetsNode({ root : this.root, arch : this.arch }).alterArch();
     }
 
 });
@@ -50,7 +48,7 @@ MAKE.decl('SetsNode', {
     },
 
     getSourceTechs : function() {
-        return ['examples', 'specs'];
+        return ['examples', 'tests', 'specs', 'jsdoc'];
     }
 
 });
@@ -105,13 +103,6 @@ MAKE.decl('ExampleNode', {
             'bemhtml',
             'html'
         ];
-    },
-
-    getLevels : function() {
-        return this.__base()
-            .concat(this.rootLevel
-                .getTech('blocks')
-                .getPath(this.getSourceNodePrefix()));
     }
 
 });
@@ -120,11 +111,16 @@ MAKE.decl('ExampleNode', {
 MAKE.decl('SpecNode', {
 
     getTechs : function() {
-        return this.__base()
-            .concat([
-                'spec.js+browser.js+bemhtml',
-                'phantomjs'
-            ]);
+        return [
+            'bemjson.js',
+            'bemdecl.js',
+            'deps.js',
+            'css',
+            'spec.js+browser.js+bemhtml',
+            'bemhtml',
+            'html',
+            'phantomjs'
+        ];
     },
 
     getLevels : function() {

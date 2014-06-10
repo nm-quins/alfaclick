@@ -1,5 +1,55 @@
 # История изменений
 
+## 2.2.3
+
+### В релиз вошли следующие исправления ошибок
+
+- В модуле `i-bem__dom` был исправлен процесс удаления блока для предотвращения нежелательной повторной
+  инициализации блока ([#540](https://github.com/bem/bem-core/issues/540)).
+- Исправлена ошибка в модуле `jquery__event_type_pointer`, из-за которой нативные события мыши ошибочно замещались
+  на pointer-события ([#534](https://github.com/bem/bem-core/issues/534)).
+- `unbindFrom*`-методы в модуле `i-bem__dom` теперь поддерживают отписывание от нескольких событий за вызов ([#533](https://github.com/bem/bem-core/issues/533)).
+- Добавлена недостающая зависимость от модуля `functions` в модуле `events` ([#532](https://github.com/bem/bem-core/issues/532)).
+
+## 2.2.2
+
+### В релиз вошли следующие исправления ошибок
+
+- Исправлена ошибка в модуле `i-bem__dom` приводящая к повторной инициализации блока на DOM-узле, отмеченном как
+  удаленный ([#518](https://github.com/bem/bem-core/issues/518)).
+- Исправлена ошибка в модуле `i-bem`, из-за которой невозможно было подписаться на событие о выставлении модификатора в
+  значение `false` ([#529](https://github.com/bem/bem-core/issues/529)).
+- Модуль `jquery` обновлен до версий 2.1.1 и 1.11.1 ([#515](https://github.com/bem/bem-core/issues/515)).
+
+## 2.2.1
+
+- Исправлена ошибка в модуле `jquery__event_type_pointerpressrelease`, из-за которой событие `pointerpress` генерировалось
+  дважды на каждое событие `mousedown` в IE10 ([#505](https://github.com/bem/bem-core/issues/505)).
+
+## 2.2.0
+
+### Крупные изменения
+
+- Добавлен новый модуль `keyboard__codes` ([#431](https://github.com/bem/bem-core/issues/431)).
+- Класс `BEMContext` добавлен в export-параметры функции `oninit` в базовых шаблонах `i-bem.bemhtml` ([#485](https://github.com/bem/bem-core/pull/485)).
+- Добавлена возможность декларировать инстанс элемента используя класс блока ([#481](https://github.com/bem/bem-core/issues/481)).
+- Исправлено поведение метода `isSimple` класса BEMContext в  в базовых шаблонах `i-bem.bemhtml` ([#432](https://github.com/bem/bem-core/pull/432)).
+- Исправлена ошибка в методе `liveUnbindFrom` модуля `BEMDOM` ([#476](https://github.com/bem/bem-core/pull/476)).
+- Исправлена ошибка в методе `isFocusable` модуля `dom`, возникающая если переданный `domElem` является сслыкой
+  с атрибутом `tabindex`, но без атрибута `href` ([#501](https://github.com/bem/bem-core/issues/501)).
+- Исправлена ошибка возникающая в процессе декларации БЭМ-блока как модуля, если был подключен
+  модуль `i-bem__dom_elem-instances` ([#479](https://github.com/bem/bem-core/issues/479)).
+- В модуле `i-bem__dom_init_auto` добавлено временное решение для проблем с производительностью ренедеринга при инициализции блоков
+  в Chrome-браузерах ([#486](https://github.com/bem/bem-core/issues/486)).
+- Модуль `vow.js` перенесен в `vow.vanilla.js` ([#412](https://github.com/bem/bem-core/issues/412)).
+
+### Также в релиз вошли следующие изменения
+
+- Модуль `vow` обновлен до версии 0.4.3 ([#504](https://github.com/bem/bem-core/pull/504)).
+- Добавлена русская документация на технологию BEMTREE ([#500](https://github.com/bem/bem-core/pull/500)).
+- Обновлена русская документация на JavaScript-синтаксис BEMHTML ([#471](https://github.com/bem/bem-core/pull/471)).
+- Добавлен референс на API JavaScript-модулей. См. ветку `v2-jsdoc` ([#478](https://github.com/bem/bem-core/pull/478)).
+
 ## 2.1.0
 
 ### Крупные изменения

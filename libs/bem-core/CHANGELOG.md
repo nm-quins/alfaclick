@@ -1,5 +1,52 @@
 # Changelog
 
+## 2.2.3
+
+### Bug fixes
+
+- Destruction process of blocks was fixed to prevent unexpected block reinitializations ([#540](https://github.com/bem/bem-core/issues/540)).
+- An issue in `jquery__event_type_pointer` was fixed. Native mouse events were replaced with pointer events
+  in unexpected cases ([#534](https://github.com/bem/bem-core/issues/534)).
+- `unbindFrom*` methods of `i-bem__dom` now support multiple events to be passed in arguments ([#533](https://github.com/bem/bem-core/issues/533)).
+- Lost `functions` dependency in `events` module was restored ([#532](https://github.com/bem/bem-core/issues/532)).
+
+## 2.2.2
+
+### Bug fixes
+
+- An issue with block reinitialization on the DOM node, that has been processed with destructor, was fixed
+  in `i-bem__dom` ([#518](https://github.com/bem/bem-core/issues/518)).
+- An issue in mod events subscription was fixed in `i-bem`. `false` could be used as `modVal` ([#529](https://github.com/bem/bem-core/issues/529)).
+- `jquery` was updated to the latest minor releases 2.1.1 and 1.11.1 ([#515](https://github.com/bem/bem-core/issues/515)).
+
+## 2.2.1
+
+- An issue in `jquery__event_type_pointerpressrelease` was fixed. `pointerpress` event has been triggered twice on each mousedown
+  in IE10 ([#505](https://github.com/bem/bem-core/issues/505)).
+
+## 2.2.0
+
+### Major changes
+
+- New `keyboard__codes` module has been added ([#431](https://github.com/bem/bem-core/issues/431)).
+- `BEMContext` class was added to oninit's export context in `i-bem.bemhtml` ([#485](https://github.com/bem/bem-core/pull/485)).
+- Ability to declare elements with block class has been added ([#481](https://github.com/bem/bem-core/issues/481)).
+- Behaviour of `isSimple` method of `BEMContext` was fixed in `i-bem.bemhtml` ([#432](https://github.com/bem/bem-core/pull/432)).
+- An issue with `liveUnbindFrom` method of `BEMDOM` was fixed in `i-bem__dom` ([#476](https://github.com/bem/bem-core/pull/476)).
+- An issue with `isFocusable` method of `dom` module was fixed for cases where `domElem` is a link with `tabindex` attribute,
+  but without `href` ([#501](https://github.com/bem/bem-core/issues/501)).
+- Short way of module declaration was fixed for `i-bem__dom_elem-instances` ([#479](https://github.com/bem/bem-core/issues/479)).
+- A workaround for rendering performance of blocks initialisation in Chrome-based browsers was added
+  to `i-bem__dom_init_auto` ([#486](https://github.com/bem/bem-core/issues/486)).
+- `vow.js` module has been moved to `vow.vanilla.js` ([#412](https://github.com/bem/bem-core/issues/412)).
+
+### Other changes
+
+- `vow` module has been updated to 0.4.3 ([#504](https://github.com/bem/bem-core/pull/504)).
+- Russian documentation about BEMTREE technology was added ([#500](https://github.com/bem/bem-core/pull/500)).
+- Russian documentation for JS-syntax of BEMHTML was updated ([#471](https://github.com/bem/bem-core/pull/471)).
+- API references for JS-modules has been added as a separate branch `v2-jsdoc` ([#478](https://github.com/bem/bem-core/pull/478)).
+
 ## 2.1.0
 
 ### Major changes

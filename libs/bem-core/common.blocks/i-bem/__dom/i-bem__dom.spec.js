@@ -828,6 +828,41 @@ describe('i-bem__dom', function() {
             delete DOM.blocks['block'];
         });
 
+        it('should propagate destructing event', function() {
+            var spy = sinon.spy();
+
+            DOM.decl('block1', {
+                onSetMod : {
+                    'js' : {
+                        'inited' : function() {
+                            DOM.blocks['block2'].on(this.domElem, { modName : 'js', modVal : '' }, spy);
+                        }
+                    }
+                }
+            });
+
+            DOM.decl('block2');
+
+            var domElem = $(BEMHTML.apply({
+                block : 'block1',
+                content : {
+                    block : 'block2'
+                }
+            })).appendTo('body');
+
+            DOM.init(domElem);
+
+            var block1 = domElem.bem('block1'),
+                block2 = block1.findBlockInside('block2');
+
+            DOM.destruct(block2.domElem);
+
+            spy.should.have.been.called;
+
+            delete DOM.blocks['block2'];
+            delete DOM.blocks['block1'];
+        });
+
         describe('elems', function() {
             it('should emit event on elem mod change with correct arguments', function() {
                 var spy1 = sinon.spy(),

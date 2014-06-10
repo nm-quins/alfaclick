@@ -1,9 +1,0 @@
-.logo .link {
-    display:          inline-block;
-    padding:          0;
-    margin:           1em 0;
-    width:            100px;
-    height:           50px;
-    background:       url('https://raw.githubusercontent.com/bem/bem-identity/master/sign/sign.png') no-repeat center;
-    background-size:  contain;
-}

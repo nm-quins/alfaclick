@@ -1,11 +1,11 @@
-/* ../../desktop.blocks/base/l-outer/l-outer.css begin */
+/* ../../desktop.blocks/l-outer/l-outer.css begin */
 .l-outer {
  width: 980px;
  margin: 0 auto;
 }
 
-/* ../../desktop.blocks/base/l-outer/l-outer.css end */
-/* ../../desktop.blocks/base/l-header/l-header.css begin */
+/* ../../desktop.blocks/l-outer/l-outer.css end */
+/* ../../desktop.blocks/l-header/l-header.css begin */
 .l-header {
  position: relative;
  padding: 40px 0;
@@ -32,8 +32,8 @@
   visibility: hidden;
  }
 
-/* ../../desktop.blocks/base/l-header/l-header.css end */
-/* ../../desktop.blocks/base/b-logo/b-logo.css begin */
+/* ../../desktop.blocks/l-header/l-header.css end */
+/* ../../desktop.blocks/b-logo/b-logo.css begin */
 .b-logo {
  position: absolute;
  width: 312px;
@@ -61,8 +61,8 @@
   }
  }
 
-/* ../../desktop.blocks/base/b-logo/b-logo.css end */
-/* ../../desktop.blocks/base/b-general-contacts/b-general-contacts.css begin */
+/* ../../desktop.blocks/b-logo/b-logo.css end */
+/* ../../desktop.blocks/b-general-contacts/b-general-contacts.css begin */
 .b-general-contacts {
  margin: 0;
 }
@@ -91,8 +91,8 @@
   content: " — ";
  }
 
-/* ../../desktop.blocks/base/b-general-contacts/b-general-contacts.css end */
-/* ../../desktop.blocks/base/b-assistance-menu/b-assistance-menu.css begin */
+/* ../../desktop.blocks/b-general-contacts/b-general-contacts.css end */
+/* ../../desktop.blocks/b-assistance-menu/b-assistance-menu.css begin */
 .b-assistance-menu {
  margin: 0;
 }
@@ -153,8 +153,8 @@
  margin-bottom: -40px;
 }
 
-/* ../../desktop.blocks/base/l-content/l-content.css end */
-/* ../../desktop.blocks/base/b-registration-form/b-registration-form.css begin */
+/* ../../desktop.blocks/l-content/l-content.css end */
+/* ../../desktop.blocks/b-registration-form/b-registration-form.css begin */
 .b-registration-form {
  border: 4px solid #dde5eb;
  border-radius: 10px 0 10px 0;
@@ -274,8 +274,8 @@
   margin: 20px -30px 0 -30px;
  }
 
-/* ../../desktop.blocks/base/b-registration-form/b-registration-form.css end */
-/* ../../desktop.blocks/base/b-tabs/b-tabs.css begin */
+/* ../../desktop.blocks/b-registration-form/b-registration-form.css end */
+/* ../../desktop.blocks/b-tabs/b-tabs.css begin */
 .b-tabs {
  font-size: 14px;
  line-height: 30px;
@@ -342,8 +342,8 @@
   visibility: hidden;
  }
 
-/* ../../desktop.blocks/base/b-tabs/b-tabs.css end */
-/* ../../desktop.blocks/base/b-credit-card/b-credit-card.css begin */
+/* ../../desktop.blocks/b-tabs/b-tabs.css end */
+/* ../../desktop.blocks/b-credit-card/b-credit-card.css begin */
 .b-credit-card {
  position: relative;
  background: #ef3224 url(https://click.alfabank.ru/ALFAIBSR/adf/c2/skins/images/menu/m-bg-blink.png) no-repeat 0 0;
@@ -392,8 +392,8 @@
   z-index: 4;
  }
 
-/* ../../desktop.blocks/base/b-credit-card/b-credit-card.css end */
-/* ../../desktop.blocks/base/b-text-field/b-text-field.css begin */
+/* ../../desktop.blocks/b-credit-card/b-credit-card.css end */
+/* ../../desktop.blocks/b-text-field/b-text-field.css begin */
 .b-text-field {
  margin: 0;
  padding: 0;
@@ -457,12 +457,12 @@
  visibility: hidden;
 }
 
-/* ../../desktop.blocks/base/b-news-previews/b-news-previews.css end */
-/* ../../desktop.blocks/base/b-news-article/b-news-article.css begin */
+/* ../../desktop.blocks/b-news-previews/b-news-previews.css end */
+/* ../../desktop.blocks/b-news-article/b-news-article.css begin */
 .b-news-article {}
 
-/* ../../desktop.blocks/base/b-news-article/b-news-article.css end */
-/* ../../desktop.blocks/base/b-advantages/b-advantages.css begin */
+/* ../../desktop.blocks/b-news-article/b-news-article.css end */
+/* ../../desktop.blocks/b-advantages/b-advantages.css begin */
 .b-advantages {
  padding: 0;
  margin: 0;
@@ -489,8 +489,8 @@
   border-bottom-color: #08628c;
  }
 
-/* ../../desktop.blocks/base/b-advantages/b-advantages.css end */
-/* ../../desktop.blocks/base/b-applications/b-applications.css begin */
+/* ../../desktop.blocks/b-advantages/b-advantages.css end */
+/* ../../desktop.blocks/b-applications/b-applications.css begin */
 .b-applications {
  padding: 0;
  margin: 0;
@@ -550,8 +550,8 @@
    visibility: hidden;
   }
 
-/* ../../desktop.blocks/base/b-applications/b-applications.css end */
-/* ../../desktop.blocks/base/b-promos-previews/b-promos-previews.css begin */
+/* ../../desktop.blocks/b-applications/b-applications.css end */
+/* ../../desktop.blocks/b-promos-previews/b-promos-previews.css begin */
 .b-promos-previews {
  margin: -20px 0 0 -20px;
 }
@@ -699,8 +699,8 @@
  visibility: hidden;
 }
 
-/* ../../desktop.blocks/base/b-rewards-previews/b-rewards-previews.css end */
-/* ../../desktop.blocks/base/l-footer/l-footer.css begin */
+/* ../../desktop.blocks/b-rewards-previews/b-rewards-previews.css end */
+/* ../../desktop.blocks/l-footer/l-footer.css begin */
 .l-footer {
  padding: 40px 0;
  border-top: 1px solid #ededed;
@@ -727,8 +727,8 @@
   visibility: hidden;
  }
 
-/* ../../desktop.blocks/base/l-footer/l-footer.css end */
-/* ../../desktop.blocks/base/b-copyright/b-copyright.css begin */
+/* ../../desktop.blocks/l-footer/l-footer.css end */
+/* ../../desktop.blocks/b-copyright/b-copyright.css begin */
 .b-copyright {
  font-size: 14px;
  line-height: 20px;
@@ -746,8 +746,8 @@
   margin-top: 0;
  }
 
-/* ../../desktop.blocks/base/b-copyright/b-copyright.css end */
-/* ../../desktop.blocks/base/b-sociality-menu/b-sociality-menu.css begin */
+/* ../../desktop.blocks/b-copyright/b-copyright.css end */
+/* ../../desktop.blocks/b-sociality-menu/b-sociality-menu.css begin */
 .b-sociality-menu {
  font-size: 0;
  line-height: 0;

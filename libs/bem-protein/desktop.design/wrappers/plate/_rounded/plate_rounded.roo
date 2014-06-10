@@ -1,3 +1,0 @@
-.plate_rounded {
-    border-radius: $xlarge_radius;
-}
