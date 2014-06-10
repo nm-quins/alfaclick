@@ -10,3 +10,7 @@ test/bower_components
 .project
 public/test
 libs
+*.bundles/*/*
+!*.bundles/.bem/*
+!*.bundles/*/blocks
+!*.bundles/*/*.bemjson.js
