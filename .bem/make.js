@@ -20,6 +20,7 @@ MAKE.decl('BundleNode', {
             'bemdecl.js',
             'deps.js',
             'roole',
+			'scss',
             'css',
             'js',
             'bemhtml',
