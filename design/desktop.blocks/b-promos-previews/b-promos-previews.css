@@ -33,6 +33,7 @@
 			width:480px;
 			height:220px;
 			border-radius:10px 0 10px 0;
+			box-sizing:border-box;
 			overflow:hidden;
 			
 			&_position_front {
