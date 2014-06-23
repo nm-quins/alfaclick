@@ -1,0 +1,43 @@
+.l-content
+{
+	&__section {
+	
+		padding:40px 0;
+		border-bottom:1px solid #ededed;
+	}
+	
+	&__section:first-child {
+		
+		padding: 0;
+		border-bottom:0;
+	}
+	
+	&__section:last-child {
+		
+		border-bottom:0;
+	}
+	
+	&__section:after {
+		
+		display: block;
+		content: ".";
+		height: 0;
+		clear: both;
+		overflow: hidden;
+		visibility: hidden;
+	}
+	
+	.b-advantages {
+		
+		float:left;
+		width:230px;
+		margin-right:20px;
+	}
+	
+	.b-applications {
+		
+		float:left;
+		width:480px;
+		margin-bottom:-40px;
+	}
+}

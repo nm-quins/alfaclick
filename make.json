@@ -1,0 +1,86 @@
+{
+    "name": "alfa-sign",
+    "version": "0.0.1",
+    "env": "development",
+    "directories": {
+        "app": "app",
+        "libs": "bower_components",
+        "public": "public",
+        "assets": {
+            "directory": "public/assets",
+            "views": "public/views",
+            "application": "application",
+            "plugins": "plugins"
+        }
+    },
+    "prefixes": [
+        "last 2 version",
+        "opera 12.16",
+        "ie 8",
+        "ie 9",
+        "android 4",
+        "ios 6"
+    ],
+    "styles": {
+        "plugins": [
+            "bower_components/normalize-css/normalize.css",
+            "bower_components/animate.css/animate.css",
+            "bower_components/bem-grid/common.blocks/line/__functions/*.scss",
+            "bower_components/bem-grid/common.blocks/line/__mixins/*.scss"
+        ],
+        "variables": [
+            "bower_components/bem-grid/common.blocks/line/__variables/*.scss",
+            "bower_components/bem-proto/design/variables.scss",
+            "design/variables.scss"
+        ],
+        "proto": [
+            "bower_components/bem-grid/common.blocks/line/*.scss",
+            "bower_components/bem-proto/design/**/{**, /**}/*.scss"
+        ],
+        "corporate" : [],
+        "project": [
+            "design/**/{**, /**}/*.scss"
+        ]
+    },
+    "scripts": {
+        "plugins": [
+            "bower_components/jquery/dist/jquery.js",
+            "bower_components/angular/angular.js",
+            "bower_components/angular-ui-router/release/angular-ui-router.js",
+            "bower_components/angular-cookies/angular-cookies.js",
+            "bower_components/angular-animate/angular-animate.js",
+            "bower_components/slidr/slidr.js"
+        ],
+        "application": [
+            "app/*.js",
+            "app/**/*.js",
+            "app/{routes,services,directives,controllers}/*js"
+        ]
+    },
+    "views": {
+        "directory": "app/**/views/*.html",
+        "modules": [
+            {
+                "module": "system",
+                "views": ["index"]
+            },
+            {
+                "module": "auth",
+                "views": ["form"]
+            },
+            {
+                "module": "signup",
+                "views": ["index", "init", "confirm", "login"]
+            },
+            {
+                "module": "restore",
+                "views": ["index", "init"]
+            },
+            {
+                "module": "info",
+                "views": ["index"]
+            }
+        ]
+    },
+    "layout": "public/*.html"
+}
