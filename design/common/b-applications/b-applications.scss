@@ -1,8 +1,9 @@
 .b-applications
 {
+	position:relative;
 	padding:0;
 	margin:0;
-	min-height:220px;
+	min-height:240px;
 	
 	&__title {
 	
@@ -72,6 +73,25 @@
 			clear: both;
 			overflow: hidden;
 			visibility: hidden;
+		}
+	}
+	
+	&__background {
+		
+		position:absolute;
+		left:0;
+		bottom:0;
+		width:210px;
+		height:195px;
+		background:url(images/b-applications-background.jpg) no-repeat 0 0;
+	}
+	
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+	
+		&__background {
+			
+			background-image:url(images/b-applications-background-2x.jpg);
+			background-size:210px 195px;
 		}
 	}
 }

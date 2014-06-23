@@ -45,6 +45,35 @@
 			line-height:30px;
 			vertical-align:top;
 		}
+		
+		&_type_code {
+
+			display:block;
+			line-height:20px;
+			color:#000;
+			margin-bottom:30px;
+		}
+	}
+	
+	&__resend {
+		
+		font-size:14px;
+		line-height:20px;
+		color: #94a0a8;
+		margin: 30px 0 0 0;
+		padding:0;
+		
+		&__link {
+			
+			color:#94a0a8;
+			text-decoration:none;
+			border-bottom:1px dashed #d4d5d7;
+		}
+		
+		&__link:hover {
+			
+			border-bottom-color:#94a0a8;
+		}
 	}
 	
 	&__tab__contents {
@@ -54,6 +83,33 @@
 		&_position_first {
 		
 			margin:0 -35px;
+		}
+		
+		&_position_second {
+		
+			position:relative;
+			padding:30px 195px 0 325px;
+			min-height:225px;
+			
+			&:before {
+	
+				position:absolute;
+				top:40px;
+				left:55px;
+				width:194px;
+				height:155px;
+				background:url(images/graphics.png) no-repeat 0 -85px;
+				content:"";
+			}
+			
+			@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+				
+				&:before {
+	
+					background-image:url(images/graphics-2x.png);
+					background-size:500px 500px;
+				}
+			}
 		}
 	}
 	
