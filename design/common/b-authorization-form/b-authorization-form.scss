@@ -21,6 +21,24 @@
 		text-align:center;
 	}
 	
+	&__remembering {
+		
+		margin-top:15px;
+	}
+	
+	&__label {
+		
+		&_type_remembering {
+			
+			display:inline-block;
+			font-size:12px;
+			line-height:18px;
+			color:#fac2be;
+			margin-left:5px;
+			vertical-align:top;
+		}
+	}
+	
 	&__recovering {
 		
 		display:block;
