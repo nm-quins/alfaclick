@@ -1,7 +1,6 @@
 .b-text-field
 {
 	margin:0;
-	padding:0;
 	font-size:14px;
 	height:30px;
 	border:0;
@@ -9,6 +8,7 @@
 	border-left:1px solid #c7c7c7;
 	border-radius: 2px;
 	box-shadow: 0px 0px 2px rgba(142,142,142,.6) inset;
+	padding:0 5px;
 	box-sizing:border-box;
 	
 	&_color_red {
@@ -21,8 +21,32 @@
 	&_type_phone {
 		
 		display:inline-block;
-		width:60px;
+		width:50px;
 		margin-left:2px;
 		vertical-align:top;
+	}
+	
+	&_type_code {
+		
+		width:160px;
+	}
+	
+	&_type_authorization_login,
+	&_type_authorization_password {
+		
+		padding-left:35px;
+	}
+	
+	&_type_registration_login,
+	&_type_registration_password,
+	&_type_registration_password_repeat {
+		
+		width:160px;
+		margin-left:15px;
+	}
+	
+	&_type_registration_login {
+		
+		margin-left:0;
 	}
 }

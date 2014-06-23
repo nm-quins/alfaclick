@@ -5,6 +5,43 @@
 	overflow:hidden;
 	border-radius:0 0 10px 0;
 	
+	&__roller {
+		
+		position:absolute;
+		top:50%;
+		right:0;
+		width:25px;
+		height:55px;
+		margin-top:-27px;
+		border-radius:2px 0 0 2px;
+		background-image: -moz-linear-gradient( 90deg, rgb(221,45,33) 0%, rgb(236,62,29) 46%, rgb(250,78,25) 100%);
+		background-image: -webkit-linear-gradient( 90deg, rgb(221,45,33) 0%, rgb(236,62,29) 46%, rgb(250,78,25) 100%);
+		background-image: -ms-linear-gradient( 90deg, rgb(221,45,33) 0%, rgb(236,62,29) 46%, rgb(250,78,25) 100%);
+		cursor:pointer;
+		z-index:2;
+		
+		&:before {
+			
+			position:absolute;
+			top:50%;
+			left:50%;
+			width:10px;
+			height:15px;
+			margin:-7px 0 0 -4px;
+			background:url(images/graphics.png) no-repeat 0 -245px;
+			content:"";
+		}
+		
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+			
+		  	&:before {
+	
+		  		background-image:url(images/graphics-2x.png);
+				background-size: 500px 500px;
+		  	}
+		}
+	}
+	
 	&__article {
 		
 		position:relative;
