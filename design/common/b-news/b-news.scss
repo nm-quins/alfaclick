@@ -1,5 +1,7 @@
 .b-news
 {
+	position:relative;
+	
 	&__title {
 	
 		font-size:22px;
@@ -7,6 +9,23 @@
 		line-height:26px;
 		color:#f03124;
 		margin:0 0 20px 0;
+	}
+	
+	&__all {
+		
+		position:absolute;
+		top:2px;
+		right:0;
+		font-size:14px;
+		line-height:20px;
+		color: #babbbc;
+		text-decoration:none;
+		border-bottom:1px solid #e1e3e5;
+	}
+
+	&__all:hover {
+
+		border-bottom-color:#babbbc;
 	}
 	
 	&__article {

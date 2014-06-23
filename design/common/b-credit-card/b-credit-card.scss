@@ -31,24 +31,16 @@
 	&__shadow {
 	
 		position:absolute;
+		top:0;
+		bottom:0;
 		left:0;
 		right:0;
 		height:100%;
 		border-radius: 10px;
 		z-index: 2;
 		box-sizing:border-box;
-		
-		&_position_top {
-		
-			top:0;
-			border-top:2px solid #f28c79;
-		}
-		
-		&_position_top {
-		
-			bottom:0;
-			border-bottom:2px solid #cb2b1f;
-		}
+		border-top:2px solid #f28c79;
+		border-bottom:2px solid #cb2b1f;
 	}
 	
 	.b-text-field {
@@ -58,5 +50,25 @@
 		width:46px;
 		margin-left:10px;
 		z-index:4;
+	}
+	
+	&:before {
+	
+		position: absolute;
+		top:20px;
+		right:25px;
+		width:100px;
+		height:30px;
+		background:url(images/graphics.png) no-repeat 0 -49px;
+		content: '';
+	}
+	
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		  
+	  	&:before {
+	
+	  		background-image:url(images/graphics-2x.png);
+			background-size: 500px 500px;
+	  	}  
 	}
 }
