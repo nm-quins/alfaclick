@@ -25,6 +25,20 @@
 		
 			color:#4d6172;
 			border-style: solid;
+			
+			&:before {
+				
+				margin:-1px 7px 0 0;
+				height:2px;
+				background:#dde5eb;
+				border:0;
+				content:'';
+			}
+		}
+		
+		&_state_passed {
+		
+			border-style: solid;
 		}
 	}
 	
