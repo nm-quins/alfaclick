@@ -109,7 +109,46 @@
 		                {
 							elem: 'section',
 		                    tag: 'section',
-							content: '1 section'
+							content: [
+								{
+									block: 'b-authorization-form',
+									tag: 'form',
+									content: [
+										{
+											elem: 'title',
+											tag: 'h2',
+											content: 'Вход в интернет-банк'
+										},
+										{
+											block: 'b-text-field',
+											tag: 'input',
+											attrs: { type: 'text', placeholder: 'Логин' },
+											mods: { color: 'red', name: 'login' }
+										},
+										{
+											block: 'b-text-field',
+											tag: 'input',
+											attrs: { type: 'password', placeholder: 'Пароль' },
+											mods: { color: 'red', name: 'password' }
+										},
+										{
+											block: 'b-button',
+											tag: 'input',
+											attrs: { type: 'button', value: 'Войти' },
+											mods: { color: 'white' }
+										},
+										{
+											elem: 'recovering',
+											content: {
+												elem: 'recovering__link',
+												tag: 'a',
+												attrs: { href: '#' },
+												content: 'Забыли логин или пароль?'
+											}
+										}
+									]
+								}
+							]
 		                },
 		                {
 							elem: 'section',
@@ -268,7 +307,7 @@
 											content: 'Новости'
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -291,7 +330,7 @@
 											]
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -314,7 +353,7 @@
 											]
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -337,7 +376,7 @@
 											]
 										},
 										{
-											block: 'b-news-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -554,7 +593,7 @@
 									block: 'b-promos-previews',
 									content: [
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -611,7 +650,7 @@
 											]
 										},
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -668,7 +707,7 @@
 											]
 										},
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: {
 												elem: 'inside',
@@ -721,7 +760,7 @@
 											}
 										},
 										{
-											block: 'b-promos-article',
+											elem: 'article',
 											tag: 'article',
 											content: [
 												{
@@ -785,14 +824,14 @@
 							elem: 'section',
 							tag: 'section',
 							content: {
-
+								
 								block: 'b-rewards-previews',
 								content: [
 									{
-										block: 'b-rewards-article',
+										elem: 'article',
 										tag: 'article',
 										content: {
-
+											
 											elem: 'link',
 											tag: 'a',
 											attrs: { href: '#' },
@@ -801,10 +840,10 @@
 													elem: 'picture',
 													tag: 'span',
 													content: {
-
+													
 														elem: 'picture__entity',
 														tag: 'img',
-														attrs: { src: 'assets/images/test/S5KQ5PsZuc.png' }
+														attrs: { src: 'images/test/S5KQ5PsZuc.png' }
 													}
 												},
 												{
@@ -816,10 +855,10 @@
 										}
 									},
 									{
-										block: 'b-rewards-article',
+										elem: 'article',
 										tag: 'article',
 										content: {
-
+											
 											elem: 'link',
 											tag: 'a',
 											attrs: { href: '#' },
@@ -828,10 +867,10 @@
 													elem: 'picture',
 													tag: 'span',
 													content: {
-
+													
 														elem: 'picture__entity',
 														tag: 'img',
-														attrs: { src: 'assets/images/test/Npk4hvHzyH.png' }
+														attrs: { src: 'images/test/Npk4hvHzyH.png' }
 													}
 												},
 												{
@@ -843,10 +882,10 @@
 										}
 									},
 									{
-										block: 'b-rewards-article',
+										elem: 'article',
 										tag: 'article',
 										content: {
-
+											
 											elem: 'link',
 											tag: 'a',
 											attrs: { href: '#' },
@@ -855,10 +894,10 @@
 													elem: 'picture',
 													tag: 'span',
 													content: {
-
+													
 														elem: 'picture__entity',
 														tag: 'img',
-														attrs: { src: 'assets/images/test/PeDNz1VP9H.png' }
+														attrs: { src: 'images/test/PeDNz1VP9H.png' }
 													}
 												},
 												{

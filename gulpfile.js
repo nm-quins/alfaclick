@@ -1,4 +1,77 @@
-var pkg      = require('./package.json'),
+var make     = require('./make.json'),
+    dirs     = make.directories,
+    gulp     = require('gulp'),
+    gif      = require('gulp-if'),
+    csso     = require('gulp-csso'),
+    concat   = require('gulp-concat'),
+    notify   = require('gulp-notify'),
+    jslint   = require('gulp-jslint'),
+    uglify   = require('gulp-uglify'),
+    sass     = require('gulp-ruby-sass'),
+    prefix   = require('gulp-autoprefixer'),
+    path     = require('path'),
+    join     = path.join,
+    ngmin    = require('gulp-ngmin'),
+    minify   = require('gulp-csso'),
+
+    DNAME    = make.name + '_v' + make.version;
+
+gulp.task('styles', function() {
+    gulp.src(
+            make.styles.plugins
+            .concat(make.styles.variables)
+            .concat(make.styles.proto)
+            .concat(make.styles.corporate)
+            .concat(make.styles.project)
+        )
+        .pipe(concat(dirs.assets.application + '.min.css'))
+        .pipe(sass())
+        .pipe(prefix(make.prefixes))
+        .pipe(minify())
+        .pipe(gulp.dest(dirs.assets.directory));
+});
+
+gulp.task('application', function() {
+    gulp.src(make.scripts.application)
+        .pipe(concat(dirs.assets.application + '.min.js'))
+        // .pipe(ngmin())
+        //.pipe(uglify())
+        .pipe(gulp.dest(dirs.assets.directory));
+});
+
+gulp.task('views', function(){
+    make.views.modules.forEach(function(item) {
+        item.views.forEach(function(view) {
+            gulp.src(join(dirs.app, item.module, 'views', view + '.html'))
+                .pipe(gulp.dest(join(dirs.assets.views, item.module)));
+        });
+    });
+});
+
+gulp.task('plugins', function() {
+    gulp.src(make.scripts.plugins)
+        .pipe(concat(dirs.assets.plugins + '.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(dirs.assets.directory))
+});
+
+gulp.task('watch', function() {
+    gulp.watch(make.styles.project, ['styles']);
+    gulp.watch(make.scripts.application, ['application']);
+    gulp.watch(make.views.directory, ['views']);
+    gulp.watch('./make.json', ['default']);
+});
+
+gulp.task('scripts', ['application', 'plugins'])
+
+gulp.task('assets', ['styles', 'scripts']);
+
+gulp.task('default', ['views', 'assets']);
+
+gulp.task('dev', ['default', 'watch']);
+
+
+/*var pkg      = require('./package.json'),
     dirs     = pkg._directories,
     bem      = require('bem').api,
     gulp     = require('gulp'),
@@ -85,3 +158,4 @@ gulp.task('views', ['bundles', 'templates']);
 gulp.task('assets', ['styles', 'plugins', 'application']);
 
 gulp.task('default', ['views', 'assets']);
+*/
