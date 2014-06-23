@@ -101,6 +101,15 @@
 				background:url(images/graphics.png) no-repeat 0 -85px;
 				content:"";
 			}
+			
+			@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+				
+				&:before {
+	
+					background-image:url(images/graphics-2x.png);
+					background-size:500px 500px;
+				}
+			}
 		}
 	}
 	
