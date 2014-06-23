@@ -55,9 +55,58 @@
 		
 		&__link {
 		
+			display:inline-block;
+			position:relative;
+			margin-left:25px;
 			color:#babbbc;
 			text-decoration:none;
 			border-bottom:1px solid #e1e3e5;
+			
+			&:before {
+				
+				position:absolute;
+				top:50%;
+				left:-25px;
+				width:16px;
+				height:16px;
+				margin-top:-8px;
+				background-image:url(images/graphics.png);
+				background-repeat:none;
+				content:"";
+			}
+			
+			@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		  
+			  	&:before {
+	
+			  		background-image:url(images/graphics-2x.png);
+					background-size: 500px 500px;
+			  	}  
+			}
+			
+			&_system_ios:before {
+				
+				width:14px;
+				background-position:-51px -245px;
+			}
+			
+			&_system_windows:before {
+				
+				background-position:-88px -245px;
+			}
+			
+			&_system_android:before {
+				
+				width:13px;
+				background-position:-70px -245px;
+			}
+			
+			&_system_other:before {
+				
+				background-position:-110px -245px;
+			}
+			
+			
 		}
 	
 		&__link:hover {

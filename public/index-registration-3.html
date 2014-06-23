@@ -55,7 +55,7 @@
 					</div>
 					<input class="b-button b-button_color_white b-button_type_authorization" type="button" value="Войти">
 					<div class="b-authorization-form__remembering">
-						<div class="b-checkbox-field b-checkbox-field_color_red b-checkbox-field_state_current">
+						<div class="b-checkbox-field b-checkbox-field_color_red">
 							<input type="checkbox" class="b-checkbox-field__entity">
 						</div>
 						<label class="b-authorization-form__label b-authorization-form__label_type_remembering">Запомнить логин</label>
@@ -88,32 +88,16 @@
 					<h2 class="b-registration-form__title">Регистрация</h2>
 					<p class="b-registration-form__description">Чтобы начать бесплатно пользоваться интернет-банком «Альфа-Клик» вам достаточно просто пройти онлайн-регистрацию</p>
 					<ul class="b-tabs">
-						<li class="b-tabs__clause b-tabs__clause_state_current">Данные клиента</li>
-						<li class="b-tabs__clause">СМС-подтверждение</li>
-						<li class="b-tabs__clause">Логин и пароль</li>
+						<li class="b-tabs__clause b-tabs__clause_state_passed">Данные клиента</li>
+						<li class="b-tabs__clause b-tabs__clause_state_passed">СМС-подтверждение</li>
+						<li class="b-tabs__clause b-tabs__clause_state_current">Логин и пароль</li>
 					</ul>
-					<div class="b-registration-form__tab__contents b-registration-form__tab__contents_position_first">
-						<section class="b-registration-form__section b-registration-form__section_position_first">
-							<h3 class="b-registration-form__section__title b-registration-form__section__title_position_first">Введите данные любой из ваших карт Альфа-Банка:</h3>
-							<div class="b-credit-card">
-								<span class="b-credit-card__logo">Альфа-Банк</span>
-								<span class="b-credit-card__label">Номер карты</span>
-								<input class="b-text-field b-text-field_color_red" type="text">
-								<input class="b-text-field b-text-field_color_red" type="text">
-								<input class="b-text-field b-text-field_color_red" type="text">
-								<input class="b-text-field b-text-field_color_red" type="text">
-								<span class="b-credit-card__shadow"></span>
-							</div>
-						</section>
-						<section class="b-registration-form__section b-registration-form__section_position_second">
-							<h3 class="b-registration-form__section__title b-registration-form__section__title_position_second">Укажите последние 4 цифры вашего мобильного телефона:</h3>
-							<label class="b-registration-form__label b-registration-form__label_type_phone">+7 (XXX) XXX-XX-</label>
-							<input class="b-text-field b-text-field_type_phone">
-						</section>
-						<section class="b-registration-form__section b-registration-form__section_position_third">
-							<h3 class="b-registration-form__section__title b-registration-form__section__title_position_third">Чтобы мы могли убедиться, что вы не робот, отметьте картинку с&nbsp;синим автомобилем:</h3>
-							<img src="assets/images/test/22FJgRVnem.jpg" alt="">
-						</section>
+					<div class="b-registration-form__tab__contents b-registration-form__tab__contents_position_three">
+						<label class="b-registration-form__label b-registration-form__label_type_authorization_information">Придумайте авторизационные данные для того, чтобы входить в Альфа-Клик:</label>
+						<input type="text" placeholder="Логин" class="b-text-field b-text-field_type_registration_login">
+						<input type="password" placeholder="Пароль" class="b-text-field b-text-field_type_registration_password">
+						<input type="password" placeholder="Повтор пароля" class="b-text-field b-text-field_type_registration_password_repeat">
+						<p class="b-registration-form__help">Постарайтесь придумать запоминающийся логин и&nbsp;сложный, а значит безопасный, пароль.</p>
 					</div>
 					<input type="submit" value="Продолжить" class="b-button b-button_color_red b-button_type_registration">
 					<p class="b-registration-form__message">
